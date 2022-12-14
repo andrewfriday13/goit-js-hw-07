@@ -20,7 +20,7 @@ function imagesGallry(evnt) {
       src=""
       data-source="large-image.jpg"
       alt=""
-      width="600"
+      width="800"
       heigh="600"
 
     />
@@ -30,13 +30,13 @@ instance.show()
 }
 
 
-const allImg = galleryItems.map(({ preview,original, description }) => 
+const allImg = galleryItems.map(({ preview, original, description }) => 
   `<div class="gallery__item">
   <a class="gallery__link" href="large-image.jpg">
     <img
       class="gallery__image"
       src="${preview}"
-      data-source="${original}"
+      data-source="large-image.jpg"
       alt="${description}"
     />
   </a>
