@@ -17,7 +17,6 @@ function imagesGallry(evnt) {
   }
 
   const fullSizeImg = evnt.target.getAttribute("data-source")
-  console.log(fullSizeImg)
     const instance = basicLightbox.create(`
     <img
       src="${fullSizeImg}"
