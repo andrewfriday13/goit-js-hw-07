@@ -14,11 +14,12 @@ function imagesGallry(evnt) {
   if (evntValue !== "IMG") {
     return console.log("не картинка")
   }
+
+  const fullSizeImg = evnt.target.getAttribute("data-source")
+  console.log(fullSizeImg)
     const instance = basicLightbox.create(`
     <img
-      class="gallery__image"
-      src=""
-      data-source="large-image.jpg"
+      src="${fullSizeImg}"
       alt=""
       width="800"
       heigh="600"
@@ -36,7 +37,7 @@ const allImg = galleryItems.map(({ preview, original, description }) =>
     <img
       class="gallery__image"
       src="${preview}"
-      data-source="large-image.jpg"
+      data-source="${original}"
       alt="${description}"
     />
   </a>
