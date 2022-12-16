@@ -16,17 +16,7 @@ function imagesGallry(evnt) {
     return console.log("не картинка")
   }
 
-  const fullSizeImg = evnt.target.getAttribute("data-source")
-    const instance = basicLightbox.create(`
-    <img
-      src="${fullSizeImg}"
-      alt=""
-      width="800"
-      heigh="600"
 
-    />
-`)
-instance.show()
 
 }
 
