@@ -8,7 +8,6 @@ gallery.addEventListener("click", imagesGallry)
 function imagesGallry(evnt) {
 
   evnt.preventDefault()
-
   const evntValue = evnt.target.nodeName
   
   if (evntValue !== "IMG") {
@@ -16,17 +15,26 @@ function imagesGallry(evnt) {
   }
 
   const fullSizeImg = evnt.target.getAttribute("data-source")
-  console.log(fullSizeImg)
     const instance = basicLightbox.create(`
     <img
       src="${fullSizeImg}"
-      alt=""
-      width="800"
-      heigh="600"
-
     />
-`)
-instance.show()
+`,
+     {
+	
+	onShow: (instance) => {document.addEventListener("keydown",clickOnEsc )},
+	onClose: (instance) => {document.removeEventListener("keydown",clickOnEsc)}
+})
+  instance.show();
+  console.log(evnt)
+  
+  function clickOnEsc() {
+    if (evnt.key !== "Escape") {
+      return
+    }
+  instance.close()
+
+  }
 
 }
 
